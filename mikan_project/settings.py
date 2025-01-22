@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-u_p^em+f!xaj57hdw6%(x5z+s*ws&4+#r!oy3mxe#nidn^c!9)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["mikan-zeta.vercel.app",]
+ALLOWED_HOSTS = ["*"]
+
 
 
 # Application definition
