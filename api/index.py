@@ -1,6 +1,11 @@
 import os
 import sys
 
+print("DJANGO_SETTINGS_MODULE (before) =", os.environ.get("DJANGO_SETTINGS_MODULE"))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mikan_project.settings")
+print("DJANGO_SETTINGS_MODULE (after)  =", os.environ.get("DJANGO_SETTINGS_MODULE"))
+
+
 # 1) Djangoプロジェクトへのパスを通す
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 PARENT_DIR = os.path.dirname(CURRENT_DIR)
