@@ -74,16 +74,19 @@ WSGI_APPLICATION = "mikan_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',                      # スラッシュ以降のDB名
-        'USER': 'root',                         # ユーザー名
-        'PASSWORD': 'CpmpkcBBbMsQAcvHAOpVCVLgezZfIRcP',  # パスワード
-        'HOST': 'autorack.proxy.rlwy.net',       # ドメイン部分
-        'PORT': '49484',                         # ポート番号
+        'HOST': os.environ.get("DB_HOST"),
+        'PORT': os.environ.get("DB_PORT"),
+        'NAME': os.environ.get("DB_NAME"),
+        'USER': os.environ.get("DB_USER"),
+        'PASSWORD': os.environ.get("DB_PASSWORD"),
     }
 }
+
 
 
 
