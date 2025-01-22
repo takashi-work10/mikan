@@ -1,0 +1,12 @@
+{% extends 'vocab/base.html' %}
+{% block content %}
+  <h1>英単語学習アプリ</h1>
+  <p>英単語を効率よく学習しましょう！</p>
+  {% if user.is_authenticated %}
+    <a href="{% url 'vocab:learn' %}" class="btn btn-primary">学習を始める</a>
+    <a href="{% url 'vocab:my_progress' %}" class="btn btn-secondary ml-2">進捗を見る</a>
+  {% else %}
+    <p>学習するにはログインが必要です。</p>
+    <a href="{% url 'login' %}" class="btn btn-primary">ログイン</a>
+  {% endif %}
+{% endblock %}

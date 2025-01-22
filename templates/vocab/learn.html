@@ -1,0 +1,20 @@
+{% extends 'vocab/base.html' %}
+{% block content %}
+  {% if word %}
+    <div class="card p-4 text-center">
+      <h2 class="mb-3">{{ word.english }}</h2>
+      <p>{{ word.meaning }}</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="word_id" value="{{ word.id }}">
+        <button type="submit" name="action" value="known" class="btn btn-success mr-2">覚えた</button>
+        <button type="submit" name="action" value="unknown" class="btn btn-warning">わからない</button>
+      </form>
+    </div>
+  {% else %}
+    <div class="alert alert-info">
+      <p>全ての単語を学習済みです！</p>
+      <a href="{% url 'vocab:my_progress' %}" class="btn btn-primary">進捗を見る</a>
+    </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+<!-- templates/registration/login.html -->
+{% extends 'vocab/base.html' %}  <!-- いつものベーステンプレートがあれば継承 -->
+
+{% block content %}
+<h2>ログイン</h2>
+<form method="post">
+  {% csrf_token %}
+  <!-- django.contrib.auth.urls にあるログインビューが
+       変数 "form" をcontextに渡してくれる -->
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">ログイン</button>
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'vocab/base.html' %}
+{% block content %}
+  <h2>学習進捗</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>英単語</th>
+        <th>ステータス</th>
+        <th>最終更新</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for lp in lp_list %}
+      <tr>
+        <td>{{ lp.word.english }}</td>
+        <td>{{ lp.status }}</td>
+        <td>{{ lp.last_reviewed }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
